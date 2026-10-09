@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7c6d0" />
+  <meta name="description" content="A little birthday surprise from your Chinnapilla to her Bava - her mini father and forever favourite person." />
+  <title>Happy Birthday, Bava! 🎀❤️</title>
+
+  <!-- Emoji favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎀</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- My custom styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- If JavaScript is off, just show everything -->
+  <noscript>
+    <style>
+      .welcome-screen { display: none !important; }
+      #mainSite { display: block !important; }
+      body.no-scroll { overflow: auto !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+</head>
+<body class="no-scroll">
+
+  <!-- ======================================================================
+       1. WELCOME SCREEN  (the gift box cover)
+       ====================================================================== -->
+  <div id="welcome" class="welcome-screen" role="dialog" aria-label="Birthday surprise welcome">
+    <div class="welcome-inner text-center">
+      <div class="gift-box" id="giftBox" aria-hidden="true">
+        <div class="gift-sparkles">
+          <span>✨</span><span>✨</span><span>✨</span><span>✨</span><span>💖</span>
+        </div>
+        <div class="gift-lid">
+          <div class="gift-bow"><span></span><span></span></div>
+        </div>
+        <div class="gift-body">
+          <div class="gift-ridge"></div>
+        </div>
+      </div>
+
+      <h1 class="welcome-title">Hey Bavaaa! 🎀<span>❤️</span></h1>
+      <p class="welcome-lead">Your Chinnapilla has a little surprise for you!</p>
+
+      <button type="button" class="btn btn-gold btn-lg rounded-pill px-4" id="openBtn" aria-label="Open your birthday surprise">
+        Open Your Surprise 🎁
+      </button>
+
+      <p class="welcome-hint">(tap it, Bava… you'll love it 🥹)</p>
+    </div>
+  </div>
+
+  <!-- Floating hearts layer (filled by script.js) -->
+  <div class="hearts-layer" id="heartsLayer" aria-hidden="true"></div>
+
+  <!-- ======================================================================
+       2. MAIN SITE  (hidden until the gift is opened)
+       ====================================================================== -->
+  <div id="mainSite" class="d-none">
+
+    <!-- ------------------------------ Navbar ------------------------------ -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top main-nav">
+      <div class="container">
+        <a class="navbar-brand" href="#home">Bava <span>❤️</span> Chinnapilla</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+          aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#memories">Memories</a></li>
+            <li class="nav-item"><a class="nav-link" href="#departments">Departments</a></li>
+            <li class="nav-item"><a class="nav-link" href="#midnight">3 AM</a></li>
+            <li class="nav-item"><a class="nav-link" href="#letter">Letter</a></li>
+            <li class="nav-item"><a class="nav-link" href="#cake">Cake</a></li>
+            <li class="nav-item"><a class="nav-link" href="#final">Surprise</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- =============================== HERO =============================== -->
+    <header class="section hero-section text-center" id="home">
+      <div class="container">
+        <p class="hero-eyebrow reveal">Happy Birthday to my favourite human 🎀</p>
+
+        <h1 class="hero-title reveal">
+          HAPPY BIRTHDAY, BAVA!<br />🎂<span class="title-heart">❤️</span>
+        </h1>
+
+        <p class="hero-subtitle reveal">
+          My Mini Father 🫂 <span class="divider">|</span>
+          My Midnight Bestie 🌙 <span class="divider">|</span>
+          My Forever Favourite Person 💗
+        </p>
+
+        <!-- ============ YOUR MAIN PHOTO: replace images/photo1.png ============ -->
+        <div class="hero-photo-wrap reveal">
+          <figure class="photo-frame">
+            <img src="images/photo1.png" alt="Me and my Bava together" />
+            <figcaption class="photo-frame-tag">Me &amp; my Bava ❤️</figcaption>
+          </figure>
+        </div>
+
+        <button type="button" class="btn btn-red btn-lg rounded-pill px-4 reveal scroll-btn" data-target="#letter"
+          aria-label="Scroll to the birthday letter">
+          A Little Message For You 💌
+        </button>
+      </div>
+    </header>
+
+    <!-- ============================= GALLERY ============================= -->
+    <section class="section" id="memories">
+      <div class="container">
+        <div class="text-center section-head">
+          <span class="section-eyebrow reveal">Our little museum of us</span>
+          <h2 class="section-title reveal">Photos &amp; <span class="accent">Memories</span></h2>
+          <p class="section-sub reveal">
+            Every picture here is a moment I never want to forget. Tap any photo to see it big and beautiful. 💗
+          </p>
+        </div>
+
+        <!--
+          HOW TO ADD YOUR PHOTOS
+          ----------------------
+          1. Put your image files inside the "images" folder.
+          2. Copy one "gallery-item" block below and change the src / caption.
+          Example:  <img src="images/my-photo.jpg" alt="A memory with Bava" />
+          Keep real faces as they are - never edit or replace them.
+        -->
+        <div class="row g-3 gallery-row reveal align-items-center">
+          <!-- Big featured photo -->
+          <div class="col-12 col-lg-6">
+            <button type="button" class="gallery-item featured" data-img="images/photo1.png"
+              data-caption="My favourite human ❤️" aria-label="Open photo: My favourite human">
+              <img src="images/photo1.png" alt="My favourite human - a memory with Bava" />
+              <span class="gallery-caption">My favourite human ❤️</span>
+            </button>
+          </div>
+
+          <!-- Smaller photos -->
+          <div class="col-12 col-lg-6">
+            <div class="row g-3">
+              <div class="col-6">
+                <button type="button" class="gallery-item" data-img="images/photo3.png"
+                  data-caption="My forever safe place 🫂" aria-label="Open photo: My forever safe place">
+                  <img src="images/photo3.png" alt="A cosy memory with Bava" />
+                  <span class="gallery-caption">My forever safe place 🫂</span>
+                </button>
+              </div>
+
+              <div class="col-6">
+                <button type="button" class="gallery-item" data-img="images/photo4.png"
+                  data-caption="My Bava, my everything 🥹" aria-label="Open photo: My Bava, my everything">
+                  <img src="images/photo4.png" alt="A precious memory with Bava" />
+                  <span class="gallery-caption">My Bava, my everything 🥹</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== DEPARTMENT CARDS ======================= -->
+    <section class="section" id="departments">
+      <div class="container">
+        <div class="text-center section-head">
+          <span class="section-eyebrow reveal">Official government notice 📜</span>
+          <h2 class="section-title reveal">
+            The Father Package You Never <span class="accent">Applied For</span> 😂❤️
+          </h2>
+          <p class="section-sub reveal">
+            Apparently these departments were automatically assigned to you the day I was born.
+            No resignation accepted, Bava. Ever. 🫂
+          </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <!-- Card 1 -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="dept-card reveal h-100">
+              <span class="dept-emoji" aria-hidden="true">🫂</span>
+              <h3 class="dept-title">Personal Caretaker</h3>
+              <p class="dept-text">
+                You take care of me, make me happy, and somehow make my bad days better.
+                Who gave you this full-time father package? 😂❤️
+              </p>
+            </article>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="dept-card reveal h-100">
+              <span class="dept-emoji" aria-hidden="true">🌙</span>
+              <h3 class="dept-title">3 AM Discussion Partner</h3>
+              <p class="dept-text">
+                Normal people sleep at 3 AM. We wake up and discuss the entire universe until morning.
+                Sleep is temporary, our nonsense is permanent! 😂
+              </p>
+            </article>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="dept-card reveal h-100">
+              <span class="dept-emoji" aria-hidden="true">🥤</span>
+              <h3 class="dept-title">Thums Up Department</h3>
+              <p class="dept-text">
+                Me: Bavaaa, buy me a Thums Up!<br />
+                Bava: Why now?<br />
+                Me: Your daughter needs it NOW! 😂🥹
+              </p>
+            </article>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="dept-card reveal h-100">
+              <span class="dept-emoji" aria-hidden="true">🎀</span>
+              <h3 class="dept-title">Professional Pamper Partner</h3>
+              <p class="dept-text">
+                You buy me what I want, listen to my stories, spoil me with love, and make me
+                feel like your little princess. Never resign from this job, Bava! ❤️
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== MIDNIGHT CHAT ========================== -->
+    <section class="midnight-section" id="midnight">
+      <div class="stars" id="stars" aria-hidden="true"></div>
+      <div class="moon" aria-hidden="true"></div>
+
+      <div class="container position-relative">
+        <div class="text-center section-head">
+          <span class="section-eyebrow gold reveal">While the whole world sleeps…</span>
+          <h2 class="section-title text-white reveal">Our Conversations Have No Closing Time 🌙😂</h2>
+          <p class="section-sub light reveal">
+            No appointment needed. No topic too silly. Just dial-a-Bava, open 24×7.
+          </p>
+
+          <div class="clock reveal" aria-label="The time is 3:00 AM">
+            <span>3</span><span class="clock-colon">:</span><span>00</span><span class="clock-am">AM</span>
+          </div>
+        </div>
+
+        <div class="chat-wrap">
+          <div class="chat-bubble chat-me reveal">Bavaaa, wake up! 🥹</div>
+          <div class="chat-bubble chat-bava reveal">What happened now? 😂</div>
+          <div class="chat-bubble chat-me reveal">Important discussion.</div>
+          <div class="chat-bubble chat-bava reveal">At 3 AM?!</div>
+          <div class="chat-bubble chat-me reveal">First, buy me a Thums Up. 🥤😭</div>
+          <div class="chat-bubble chat-bava reveal">You woke me up for this?!</div>
+          <div class="chat-bubble chat-bava reveal">Okay okay… eat your oats first, then we'll talk. 🥣😴</div>
+          <div class="chat-bubble chat-me reveal">Yes, Bava. Now let's discuss life until morning! 😂❤️</div>
+        </div>
+
+        <p class="midnight-caption text-center reveal">Our conversations have no closing time.</p>
+      </div>
+    </section>
+
+    <!-- ============================= LETTER ============================== -->
+    <section class="section" id="letter">
+      <div class="container">
+        <div class="text-center section-head">
+          <span class="section-eyebrow reveal">Straight from my heart to yours</span>
+          <h2 class="section-title reveal">A Little <span class="accent">Message</span> For You 💌</h2>
+        </div>
+
+        <div class="letter-card reveal">
+          <div class="letter-paper">
+            <p>
+              Happy Birthday, my Bava! ❤️🎂
+            </p>
+            <p>
+              I'm your little Chinnapilla, and you're my mini father, my caretaker, my midnight
+              bestie, and my favourite person.
+            </p>
+            <p>
+              Thank you for taking care of me, making me happy, listening to my endless stories,
+              talking with me from midnight until morning, and making even my smallest wishes
+              feel special.
+            </p>
+            <p>
+              Our 3 AM discussions might make no sense to anyone else, but they are some of my
+              favourite memories. And of course, no day is complete without me asking you to buy
+              me something, especially a Thums Up! 😂🥤
+            </p>
+            <p>
+              I'll always be your little girl, your tiny headache, your midnight discussion
+              partner, and your forever responsibility.
+            </p>
+            <p>
+              I wish you endless happiness, success, good health, and all the beautiful things
+              you deserve. Keep smiling, keep pampering your Chinnapilla, and never stop being
+              my favourite person.
+            </p>
+            <p>
+              Lots of love, Bava. Happy Birthday! ❤️🫂
+            </p>
+          </div>
+
+          <p class="letter-sign">
+            Forever your Chinnapilla — no refunds, no replacements! 😂🎀
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== CAKE =============================== -->
+    <section class="section text-center" id="cake">
+      <div class="container">
+        <span class="section-eyebrow reveal">Make a wish, Bava 🎂</span>
+        <h2 class="section-title reveal">Your Birthday <span class="accent">Cake</span></h2>
+        <p class="section-sub reveal">
+          I decorated it myself (with a lot of love and a little chaos). Now blow the candles — I'll
+          even hold my breath for you. 😄
+        </p>
+
+        <div class="cake-stage reveal">
+          <div class="cake" id="cake" aria-hidden="true">
+            <div class="cake-candles">
+              <span class="candle"><span class="flame"></span></span>
+              <span class="candle"><span class="flame"></span></span>
+              <span class="candle"><span class="flame"></span></span>
+              <span class="candle"><span class="flame"></span></span>
+              <span class="candle"><span class="flame"></span></span>
+            </div>
+            <div class="cake-layer cake-top"><span class="cake-drip"></span></div>
+            <div class="cake-layer cake-mid"></div>
+            <div class="cake-layer cake-bottom"></div>
+            <div class="cake-plate"></div>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-red btn-lg rounded-pill px-4 mt-4" id="blowBtn"
+          aria-label="Blow the candles on the birthday cake">
+          Blow the Candles 🎂
+        </button>
+
+        <div class="cake-wish" id="cakeWish" role="status">
+          One wish from your Chinnapilla: Always stay happy, healthy, and close to me. ❤️🥹
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= FINAL SURPRISE ========================== -->
+    <section class="section final-section text-center" id="final">
+      <div class="container">
+        <span class="section-eyebrow reveal">One last thing from your Chinnapilla</span>
+        <h2 class="section-title reveal">Our Favourite <span class="accent">Photo</span></h2>
+
+        <!-- Replace images/our-photo-fixed.png with your favourite photo together -->
+        <div class="final-photo reveal">
+          <figure class="photo-frame">
+            <img src="images/our-photo-fixed.png" alt="Our favourite photo together" />
+          </figure>
+        </div>
+
+        <h3 class="final-equation reveal">
+          Bava <span class="plus">+</span> Chinnapilla <span class="plus">=</span>
+          Forever Us <span class="beat">❤️🫂</span>
+        </h3>
+        <p class="final-sub reveal">
+          Thank you for being my mini father, my happiness, and my favourite kind of madness.
+        </p>
+
+        <button type="button" class="btn btn-gold btn-lg rounded-pill px-5 reveal" id="hugBtn"
+          aria-label="Send a hug to Bava">
+          Send a Hug to Bava 🤗
+        </button>
+
+        <p class="final-hug-msg" id="hugMsg" role="status"></p>
+      </div>
+    </section>
+
+    <footer class="footer text-center">
+      <p class="mb-0">
+        Made with a lot of love, a little chaos, and a whole lot of Thums Up ❤️🥤<br />
+        <strong>Bava + Chinnapilla = Forever Us</strong>
+      </p>
+    </footer>
+  </div><!-- /#mainSite -->
+
+  <!-- ================= BOOTSTRAP PHOTO MODAL (lightbox) ================= -->
+  <div class="modal fade" id="photoModal" tabindex="-1" aria-labelledby="photoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content photo-modal-content">
+        <div class="modal-body text-center">
+          <button type="button" class="btn-close photo-modal-close" data-bs-dismiss="modal" aria-label="Close photo"></button>
+          <img id="photoModalImg" class="photo-modal-img" src="" alt="" />
+          <p id="photoModalCaption" class="photo-modal-caption" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS bundle (needed for navbar + modal) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- My custom script -->
+  <script src="script.js"></script>
+</body>
+</html>
